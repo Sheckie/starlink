@@ -100,13 +100,13 @@
     <script>
         function showPaymentPrompt(amount, isFreeTrial = false) {
             if (isFreeTrial) {
-                alert("Free trial option is only option for devices paid at least once everyday.");
+                alert("The free trial is available only for devices that have made at least one payment per day.");
             } else {
-                alert(`Pay Ksh ${amount} to till 4646254`);
+                alert(`Pay Ksh ${amount} to till 4362034`);
             }
         }
         function copyTillNumber() {
-            navigator.clipboard.writeText("4646254").then(() => {
+            navigator.clipboard.writeText("4362034").then(() => {
                 alert("Till number copied!");
             }).catch(err => {
                 alert("Failed to copy: " + err);
@@ -119,20 +119,38 @@
         <h1>Select a Package</h1>
         <div class="payment-info">Starlink Home <i>(Only Safaricom)</i></div> 
         <button class="payment-btn" onclick="showPaymentPrompt(0, true)">5 minutes free trial</button> 
-        <button class="payment-btn" onclick="showPaymentPrompt(10)">10hours - unlimited (Ksh 20)</button>
-        <button class="payment-btn" onclick="showPaymentPrompt(20)">24 hours - Unlimited (Ksh 30)</button>
+        <button class="payment-btn" onclick="showPaymentPrompt(20)">10hours - unlimited (Ksh 20)</button>
+        <button class="payment-btn" onclick="showPaymentPrompt(30)">24 hours - unlimited (Ksh 30)</button>
         <button class="payment-btn" onclick="showPaymentPrompt(50)">72 hours - unlimited (Ksh 50)</button>
         <button class="payment-btn" onclick="showPaymentPrompt(250)">7 Days - unlimited (Ksh 250)</button>
-        <button class="payment-btn" onclick="showPaymentPrompt(400)">21 Days - unlimted (Ksh 400)</button>      
-        <button class="payment-btn" onclick="showPaymentPrompt(600)">31Days - Unlimited (Ksh 600)</button>
+        <button class="payment-btn" onclick="showPaymentPrompt(400)">21 Days - unlimited (Ksh 400)</button>      
+        <button class="payment-btn" onclick="showPaymentPrompt(600)">31Days - unlimited (Ksh 600)</button>
         
         <div class="till-info">Till Number: <strong>4362034</strong></div>
         <button class="copy-btn" onclick="copyTillNumber()">Copy Till</button>
 
         <div class="inquiry">
             <p>In case of inquiry, contact us at:</p>
-            <a href="mailto:Helplinestarl@gmail.com" class="email">support@starlink.ke</a>
+            <a href="mailto:support@starlink.ke" class="email">support@starlink.ke</a>
+
         </div>
     </div>
 </body>
+<script>
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener("keydown", function (e) {
+        if (
+            e.key === "F12" || 
+            (e.ctrlKey && e.shiftKey && e.key === "I") || 
+            (e.ctrlKey && e.shiftKey && e.key === "J") || 
+            (e.ctrlKey && e.key === "U")
+        ) {
+            e.preventDefault();
+        }
+    });
+</script>
+
 </html>
